@@ -37,7 +37,7 @@ namespace UserService.Controllers
         }
 
         [HttpGet("{id})")]
-        public async Task<IActionResult> Get([FromQuery]GetUserQuery query)
+        public async Task<IActionResult> Get([FromQuery] GetUserQuery query)
         {
             var result = await _mediator.Send(query);
 

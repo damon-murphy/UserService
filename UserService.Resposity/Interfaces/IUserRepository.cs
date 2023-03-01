@@ -10,6 +10,6 @@ namespace UserService.Resposity.Interfaces
     {
         void CreateUser(UserDto user);
 
-        UserDto GetUser(int id); 
+        UserDto GetUser(int id);
     }
 }
