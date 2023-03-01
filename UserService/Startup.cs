@@ -45,6 +45,8 @@ namespace UserService
 
             app.UseHttpsRedirection();
 
+            app.UseHttpLogging();
+
             app.UseRouting();
 
             app.UseAuthorization();

@@ -25,6 +25,7 @@ namespace UserService.Controllers
         [HttpPost()]
         public async Task<IActionResult> Post(CreateUserCommand command)
         {
+            _logger.LogInformation($"Request {Request.Method} {Request.Path}");
             ValidationResult validationResult = await _validator.ValidateAsync(command);
 
             if (!validationResult.IsValid)
@@ -39,6 +40,7 @@ namespace UserService.Controllers
         [HttpGet("{id})")]
         public async Task<IActionResult> Get([FromQuery] GetUserQuery query)
         {
+            _logger.LogInformation($"Request {Request.Method} {Request.Path}");
             var result = await _mediator.Send(query);
 
             return Ok(result);
